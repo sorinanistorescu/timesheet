@@ -1,2 +1,5 @@
 /build
-/build
+/.settings
+/.classpath
+/WebContent/WEB-INF/classes
+/.project
