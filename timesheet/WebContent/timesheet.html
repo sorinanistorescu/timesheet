@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="US-ASCII">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timesheet</title>
+
+<script type="text/javascript" src="resources/lib/angular.min.js"></script>
+<script type="text/javascript" src="resources/lib/angular-resource.min.js"></script>
+<script type="text/javascript" src="resources/js/timesheet.js"></script>
+
+<link rel="stylesheet" type="text/css" href="resources/lib/bootstrap-3.1.1/css/bootstrap.min.css"/>
+</head>
+<body>
+
+<div ng-controller="AdministratorController" class="container">
+	
+	<h3>Add new user: </h3>
+	<span>Email: </span>
+	<input ng-model="user.email" placeholder="Email..." />
+
+	<p>{{user.email}}</p>
+	
+	<ul ng-repeat="project in projects">
+		<li>{{project.name}}</li>
+	</ul>
+	
+</div>
+</body>
+</html>
