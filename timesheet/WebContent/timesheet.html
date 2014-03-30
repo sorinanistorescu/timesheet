@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="admin">
 <head>
 <meta charset="US-ASCII">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,10 +21,74 @@
 
 	<p>{{user.email}}</p>
 	
-	<ul ng-repeat="project in projects">
-		<li>{{project.name}}</li>
-	</ul>
+	
+	<span>Project: </span>
+	<select>
+		<option ng-repeat="project in projects" ng-model="project.code">{{project.name}}</option>
+	</select>
+	
+	<form ng-submit="submit()">
+		<button>Submit</button>
+	</form>
 	
 </div>
+
+<div ng-controller="UserController">
+	<table>
+		<thead>
+			<tr>
+				<td>
+					Monday
+				</td>
+				<td>
+					Tuesday
+				</td>
+				<td>
+					Wednesday
+				</td>
+				<td>
+					Thursday
+				</td>
+				<td>
+					Friday
+				</td>
+				<td>
+					Saturday
+				</td>
+				<td>
+					Sunday
+				</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<input ng-model="time.monday"/>
+				</td>
+				<td>
+					<input ng-model="time.tuesday"/>
+				</td>
+				<td>
+					<input ng-model="time.wednesday"/>
+				</td>
+				<td>
+					<input ng-model="time.thursday"/>
+				</td>
+				<td>
+					<input ng-model="time.friday"/>
+				</td>
+				<td>
+					<input ng-model="time.saturday"/>
+				</td>
+				<td>
+					<input ng-model="time.sunday"/>
+				</td>
+			</tr>
+		</tbody>
+	
+	</table>
+
+</div>
+
 </body>
 </html>
