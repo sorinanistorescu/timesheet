@@ -41,5 +41,11 @@ public class Employee {
 	public void setProject(Project project) {
 		this.project = project;
 	}
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", email=" + email + ", project="
+				+ project + "]";
+	}
 	
 }

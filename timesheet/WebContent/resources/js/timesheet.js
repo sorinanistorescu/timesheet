@@ -15,7 +15,25 @@ function AdministratorController ($scope, $http) {
 	};
 	
 	$scope.addUser=function($scope, $http) {
-		var addUserRequest = $http.post("rest/admin/addUser");
+		
+		var employee = new Object();
+		employee.email = $scope.user.email;
+		employee.project = null;
+		employee.firstName = 'testFN';
+		employee.lastName = 'testLN';
+		
+		var employeeJSON = angular.toJson(employee);
+		alert(employeeJSON);
+		
+		var addUserRequest = //$http.post("rest/admin/addUser");
+		
+		$http({
+		      method: 'POST',
+		      data: employeeJSON,
+		      url:'rest/admin/users/add',
+		      headers: {'Content-Type':'application/json;'}
+		    });
+		
 		addUserRequest.success(function(data, status, headers, config) {
 			alert("AJAX succeded!");
         });
